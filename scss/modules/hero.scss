@@ -1,0 +1,32 @@
+
+.large-hero {
+    height: 95vh;
+    background-image: linear-gradient(rgba($pink, .4), rgba($pink, .2)), url('../img/hair-salon-hero.jpg');
+    background-size: cover;
+    background-position: right top;
+    position: relative;
+    background-attachment: fixed;
+    
+    &__wrap {
+        max-width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+    }
+    
+    &__main-heading {
+        font-family: Tangerine, sans-serif;
+        font-weight: 700;
+        font-size: 9rem;
+        line-height: .8;
+        color: #fff;
+    }
+    
+    &__sub-heading {
+        font-size: 2rem;
+        font-weight: 300;
+        color: #000;
+    }
+    
+}

@@ -1,0 +1,113 @@
+
+.grid-gallery {
+    margin-top: -15em;
+
+    /*why cant negative top margin apply to the grid??*/
+    &__grid {
+        position: relative;
+        z-index: 100;
+        display: grid;
+        width: 900px;
+        height: 450px;
+        margin: 0 auto;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        background-color: #000;
+        
+        &__cell h3 {
+            text-transform: uppercase;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        &__cell .btn {
+            position: absolute;
+            bottom: 1.8em;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #333;
+            background-color: darken(rgba($pink, .8), 10%);
+            width: 60%;
+            display: inline-block;
+            padding: .6em 1.2em;
+            text-align: center;
+            
+            &::before, &::after {
+                content: "";
+                transition: all 250ms;
+                position: absolute;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 0;  
+                height: 1.0909em; /* was 24px */
+                width: 1.0909em; /* was 24px */
+            }
+            
+            &::before {
+                border-top-width: .090em; /* was 2px */
+                border-color: #c47135;
+                top: -.227em; /* was 5px */    
+                left: 0;   
+            }
+
+            &::after {
+                border-bottom-width: .090em; /* was 2px */
+                border-color: #c47135;
+                bottom: -.227em; /* was 5px */
+                right: 0px;
+            }
+
+            &:hover::before,
+            &:hover::after {
+                width: 100%;
+            }
+            
+        }
+        
+        &__cell {
+            overflow: hidden;
+        }
+        
+        &__cell img {
+            width: 100%;
+            object-fit: cover;
+            opacity: .7;
+            transition: all 300ms ease-out;
+            
+            &:hover {
+                opacity: 1;
+                transform: scale(1.15);
+            }
+        }
+        
+        &--cell__one {
+           background-color: $pink; 
+            position: relative;
+        }
+        
+        &--cell__three {
+           background-color: #000;
+            color: #fff;
+            position: relative;
+            
+            & .btn {
+                color: #fff;
+            }
+        }
+        
+        &--cell__six {
+           background-color: #fff;
+            position: relative;
+        }
+        
+        &--cell__eight {
+            background-color: $pink;
+            position: relative;
+        }
+        
+    }
+    
+    
+}
