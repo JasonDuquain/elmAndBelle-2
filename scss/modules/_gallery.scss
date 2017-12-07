@@ -1,0 +1,38 @@
+
+.gallery {
+    background-color: #000;
+    padding-left: 0;
+    padding-right: 0;
+    
+    &__main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 270px 270px;
+        
+        
+        & figure {
+            position: relative;
+            overflow: hidden;
+            
+            & img {
+                width: 100%;
+                opacity: .7;
+                transition: all 300ms ease-out;
+                
+                &:hover {
+                    transform: scale(1.15);
+                    opacity: 1;
+                }
+            }
+            
+            & figcaption {
+                position: absolute;
+                //add styles on hover?
+            }
+        }
+        
+        
+        
+    }
+    
+}

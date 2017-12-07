@@ -25,7 +25,47 @@ p {
 }
 
 section {
-    padding: 8em 1.5em;
+    padding: 6em 1.5em;
     
 }
+
+div.section-headline__wrapper {
+    margin-bottom: .9em;
+    font-size: 3.5em;
+    text-align: center;
+    color: #fff;
+}
+
+.testimonials div.section-headline__wrapper {
+    color: #000;
+}
+
+h2.section-headline {
+    font-family: 'Tangerine', sans-serif;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    
+    &::before, &::after {
+        position: absolute;
+        content: "";
+        width: .3em;
+        height: .04em;
+        background-color: #fff;
+    }
+    
+    &::before {
+        left: -.6em;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    &::after {
+        right: -.6em;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+}
+        
 
