@@ -38,6 +38,10 @@ div.section-headline__wrapper {
 
 .testimonials div.section-headline__wrapper {
     color: #000;
+    
+    & h2.section-headline::before, h2.section-headline::after {
+        background-color: #000;
+    } 
 }
 
 h2.section-headline {
@@ -50,7 +54,7 @@ h2.section-headline {
         position: absolute;
         content: "";
         width: .3em;
-        height: .04em;
+        height: .02em;
         background-color: #fff;
     }
     
