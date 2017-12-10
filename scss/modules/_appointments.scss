@@ -1,0 +1,83 @@
+
+
+h3 {
+    margin-bottom: 1em;  
+}
+
+.contacts li + li{
+    margin-top: .3em;
+}
+
+input:not([type="input"]), textarea, select {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.wrapper {
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+}
+
+.wrapper > * {
+    padding: 1em;
+}
+
+.field-prefixed {
+    display: flex;
+}
+
+@media (min-width: 700px) {
+  .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+  }
+    
+  .wrapper > * {
+      padding: 1em;
+  }
+}
+
+.contacts {
+    background: darken($pink, 10%);
+    color: #fff;   
+}
+
+/* form element NOT the div with a class for form */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+}
+
+form label {
+    display: block;
+}
+
+form p {
+    margin: 0;  
+}
+
+textarea {
+    height: 8em;
+}
+
+/* changed from 1 / 3 because that way there will ALWAYS be two columns*/
+.full-width {
+    grid-column: 1 / -1;  
+}
+
+.full-width input[type="submit"] {
+    
+}
+
+input, textarea, select {
+    padding: .5em;  
+}
+
+@media (max-width: 500px) {
+    form {
+        grid-template-columns: 1fr; /* this would not work if the .full-width class was set to grid-column: 1 / 3 as that would create an implicit 2nd column */
+        
+    }
+ 
+}
+
