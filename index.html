@@ -218,49 +218,68 @@
    
    <section class="appointments" id="appointments">
        <div class="section-headline__wrapper">
-            <h2 class="section-headline">Contact Me</h2>
+            <h2 class="section-headline">Appointments</h2>
         </div>    
        
        
-  <div class="wrapper">
+  <div class="wrapper maxwrap">
     <div class="contacts">
       <h3>Our contacts</h3>
       <ul>
-        <li>San Joe St.</li>
-        <li>00-1212121-11</li>
-        <li>mail@mail.com</li>
+        <li>123 Main Street</li>
+        <li>@jenn</li>
+        <li>jenn@gmail.com</li>
       </ul>
     </div>
 
     <div class="form">
       <form action="">
-        <p>
-          <label for="yo">Your name</label>
-          <input type="text" id="yo">
-        </p>
-        <p>
-          <label for="">Email Address</label>
-          <input type="text">
-        </p>
-         <p>
-        <label for="">Service</label>
-        <select name="find-us" id="find-us">
-            <option value="haircut">Haircut</option>
-            <option value="hairstyle">Hairstyle</option>
-            <option value="coloring">Coloring</option>
-            <option value="other">Other</option>
-        </select> 
-        </p>
-        <p>
-          <label for="">Appointment Date</label>
-          <input type="date">
-        </p>
+        <p class="field field-text">
+            <label for="applicant-name">Name:</label>
+            <span class="field-prefixed">
+              <span class="field-prefix" id="applicant-name-prefix"><i class="fa fa-user"></i></span>
+              <input name="applicant-name" id="applicant-name" type="text" />
+            </span>
+            
+          </p>
+          <p class="field field-text">
+            <label for="applicant-email">Email Address:</label>
+            <span class="field-prefixed">
+              <span class="field-prefix" id="applicant-email-prefix"><i class="fa fa-envelope"></i></span>
+              <input name="applicant-email" id="applicant-email" type="email" />
+            </span>
+            
+          </p>
+         <p class="field field-text">
+            <label for="applicant-date">Service Requested:</label>
+            <span class="field-prefixed">
+              <span class="field-prefix" id="applicant-date-prefix"><i class="fa fa-cog"></i></span>
+              <select name="find-us" id="find-us">
+                <option value="haircut">Haircut</option>
+                <option value="hairstyle">Hairstyle</option>
+                <option value="coloring">Coloring</option>
+                <option value="other">Other</option>
+            </select>
+            </span>
+            
+          </p>
+        <p class="field field-text">
+            <label for="applicant-date">Appointment Date:</label>
+            <span class="field-prefixed">
+              <span class="field-prefix" id="applicant-date-prefix"><i class="fa fa-calendar"></i></span>
+              <input name="applicant-date" id="applicant-date" type="date" />
+            </span>
+            
+          </p>
+        <p class="field field-text full-width">
+            <label for="applicant-pencil">Special Requests:</label>
+            <span class="field-prefixed">
+              <span class="field-prefix" id="applicant-pencil-prefix"><i class="fa fa-pencil"></i></span>
+              <textarea></textarea>
+            </span>
+          </p>
         <p class="full-width">
-          <label for="">Special Requests</label>
-          <textarea name="" id="" cols="30" rows="7"></textarea>
-        </p>
-        <p class="full-width">
-          <input type="submit">Send</input>
+          <input type="submit" value="Submit Form">
         </p>
       </form>
     </div>

@@ -95,3 +95,20 @@ function moveSlides(direction) {
         }
     }
 }
+
+
+
+/********FORM STYLES********/
+
+let input = document.querySelectorAll('input, textarea, select');
+          
+         input.forEach((el) => {
+                  el.addEventListener('focus', function() {
+                  el.previousElementSibling.style.color = '#a7a6cb';
+              });
+             
+                el.addEventListener('blur', function() {
+                  el.previousElementSibling.style.color = '';
+              });
+          });
+        
