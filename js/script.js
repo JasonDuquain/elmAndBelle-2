@@ -1,3 +1,20 @@
+/********      STICKY HEADER    ********/
+
+let siteHdr = document.querySelector('.site-header');
+let mainHeading = document.querySelector('.large-hero__main-heading');
+
+
+document.addEventListener('scroll', function() {
+    let hdgBtm = mainHeading.getBoundingClientRect().bottom;
+    if (hdgBtm <= 0) {
+        siteHdr.classList.add('site-header--stickee');
+    } else {
+        siteHdr.classList.remove('site-header--stickee');
+        
+    }
+});
+
+
 /***************SLIDER TESTIMONIAL**********/
 
 /*
