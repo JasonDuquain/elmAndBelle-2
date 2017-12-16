@@ -15,6 +15,18 @@ document.addEventListener('scroll', function() {
 });
 
 
+/**********  HAMBURGER MENU **************/
+
+let hamburgerIcon = document.querySelector('.site-header__menu-icon');
+let navWrap = document.querySelector('.nav-wrap');
+
+hamburgerIcon.addEventListener('click', function(e) {
+    e.preventDefault();
+    navWrap.classList.toggle('showIt');
+    
+});
+
+
 /***************SLIDER TESTIMONIAL**********/
 
 /*
