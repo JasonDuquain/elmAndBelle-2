@@ -7,12 +7,23 @@
         position: relative;
         z-index: 100;
         display: grid;
-        width: 900px;
-        height: 450px;
+        width: 56.25em;
+        height: 28.125em;
         margin: 0 auto;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr 1fr;
         background-color: #000;
+        
+        @include breakpoint(max-width 950px) {
+            font-size: .9em;
+        }
+        
+        @include breakpoint(max-width $medium) {
+            width: 28.125em;
+            height: 56.25em;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
         
         &__cell h3 {
             text-transform: uppercase;

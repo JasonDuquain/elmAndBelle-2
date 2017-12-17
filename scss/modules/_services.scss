@@ -11,6 +11,11 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 1.2em;
         
+        @include breakpoint(max-width $medium) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
     }
     
     &__salon-services {
@@ -19,6 +24,11 @@
         border-radius: 1em;
         display: flex;
         flex-direction: column;
+        
+        @include breakpoint(max-width $medium) {
+            flex: 1 1 300px;
+            margin: 1em;
+        }
     }
     
     & .fa {

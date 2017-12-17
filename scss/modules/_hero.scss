@@ -3,7 +3,7 @@
     height: 95vh;
     background-image: linear-gradient(rgba($pink, .4), rgba($pink, .2)), url('../img/hair-salon-hero.jpg');
     background-size: cover;
-    background-position: right top;
+    background-position: 30% top;
     position: relative;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -12,8 +12,18 @@
         max-width: 80%;
         position: absolute;
         top: 50%;
-        left: 30%;
+        left: 35%;
         transform: translate(-50%, -50%);
+        
+        @include breakpoint(max-width $medium) {
+            left: 40%;
+            max-width: 90%;
+        }
+        
+        @include breakpoint(max-width $small) {
+            left: 50%;
+            top: 40%;
+        }
     }
     
     &__main-heading {
@@ -23,12 +33,20 @@
         line-height: .8;
         color: #fff;
         margin: 0;
+        
+        @include breakpoint(max-width $medium) {
+            font-size: 8rem;
+        }
     }
     
     &__sub-heading {
         font-size: 2rem;
         font-weight: 300;
         color: #000;
+        
+        @include breakpoint(max-width $medium) {
+            font-size: 1.7rem;
+        }
     }
     
 }

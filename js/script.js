@@ -23,8 +23,28 @@ let navWrap = document.querySelector('.nav-wrap');
 hamburgerIcon.addEventListener('click', function(e) {
     e.preventDefault();
     navWrap.classList.toggle('showIt');
+    this.classList.toggle('close-icon');
+    siteHdr.classList.toggle('fadeColor')
     
 });
+
+
+/************  HIGHLIGHT ON SCROLL  **************/
+
+let anchs = document.querySelectorAll('.site-header__primary-nav a');
+let sects = document.querySelectorAll('section:not(:first-of-type)');
+
+document.addEventListener('scroll', function() {
+    anchs.forEach(function(el, idx) {
+        if (sects[idx].getBoundingClientRect().top <= 40 && sects[idx].getBoundingClientRect().bottom >= 40) {
+            el.classList.add('highlight');
+        } else {
+            el.classList.remove('highlight');
+            
+        }
+    });
+});
+
 
 
 /***************SLIDER TESTIMONIAL**********/
