@@ -3,7 +3,7 @@
 }
 
 .contacts {
-    background: darken(rgba($pink, .9), 10%);
+    background: rgba(0,0,0,.8);
     color: #fff;   
 }
 
@@ -114,7 +114,7 @@ textarea {
     color: #fff;
     border-radius: 6px;
     border: 0;
-    background-image: linear-gradient(to top, darken(rgba($pink, .9), 10%), darken(rgba($pink, .9), 15%));
+    background-image: linear-gradient(to top, #8989ba, #a7a6cb);
     box-shadow: 1px 1px 2px rgba(0,0,0,.4);
 }
 

@@ -182,8 +182,7 @@
                 transition: all 300ms ease-out;
                 
                 &.highlight {
-                    background-color: $pink;
-                    color: #fff;
+                    color: darken($pink, 15%);
                 }
                 
                 .nav-wrap.showIt & {

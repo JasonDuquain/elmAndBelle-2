@@ -8,6 +8,7 @@
 
 .main-container {
     position: relative;
+    padding: 1em 0em;
     //overflow: hidden; might need if width increases on each slide
 }
 
@@ -61,13 +62,36 @@ cite {
     background-repeat: no-repeat;
 }
 
-#prev { background-image: url('../img/arrow-left-out.svg'); }
+#prev { 
+    background-image: url('../img/arrow-left-out.svg');
+
+    @include breakpoint(max-width $small) {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: -2.5em;
+    }
+}
 
 #prev:hover { background-image: url('../img/arrow-left-over.svg'); }
 
 #next {
     background-image: url('../img/arrow-right-out.svg');
     right: 0;
+    
+    @include breakpoint (max-width $small) {
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: -5.5em;
+        top: auto;
+    }
 }
 
 #next:hover { background-image: url('../img/arrow-right-over.svg'); }
+
+
+@include breakpoint(max-width $small) {
+    .testimonials .section-headline__wrapper {
+        margin-bottom: 2.5em;
+    }
+}
+

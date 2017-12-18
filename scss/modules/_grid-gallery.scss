@@ -23,6 +23,11 @@
             height: 56.25em;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr 1fr 1fr;
+            font-size: 1.1em;
+        }
+        
+        @include breakpoint(max-width $small) {
+            font-size: .85em;
         }
         
         &__cell h3 {

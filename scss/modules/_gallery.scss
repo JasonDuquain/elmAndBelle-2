@@ -2,8 +2,8 @@
 
 .gallery {
     background-color: #000;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 1em;
+    padding-right: 1em;
     
     &__main {
         display: grid;
@@ -12,19 +12,36 @@
         grid-gap: .7em;
         grid-auto-flow: row dense;
         
+        @include breakpoint(max-width $medium) {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        @include breakpoint(max-width $small) {
+            grid-template-columns: 1fr;
+        }
+        
         & figure {
             position: relative;
             display: flex;
             flex-direction: column;
             overflow: hidden;
             background-color: rgba(255,255,255,.7);
+            border-radius: 3px;
             
             &.tall {
                 grid-row: auto / span 2;
+                
+                @include breakpoint(max-width $small) {
+                    grid-row: auto;
+                }
             }
             
             &.wide {
                 grid-column: auto / span 2;
+                
+                @include breakpoint(max-width $small) {
+                    grid-column: auto;
+                }
             }
             
             & img {
@@ -45,14 +62,17 @@
                 opacity: 0;
                 top: 50%;
                 left: 50%;
+                transform: translate(-50%, -50%) scale(2);
                 transition: all 300ms ease-out;
+                color: #fff;
+                font-family: 'Raleway', sans-serif;
+                font-size: 1.2em;
+                font-weight: 700;
             }
             
             &:hover figcaption {
                 opacity: 1;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%) scale(1);
             }
         }
         
