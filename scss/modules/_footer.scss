@@ -1,0 +1,126 @@
+
+.footer {
+    padding: 1em calc(50% - 600px);
+    background-color: rgba(0,0,0,.8);
+    color: #fff;
+    border-top: 1px solid #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: .9rem;
+    
+    &__logo-container {
+        text-align: center;
+        margin-bottom: 1.8em;
+    }
+    
+    &__logo {
+        width: 7em;
+        text-align: center;
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2em;
+        margin-bottom: 2em;
+        justify-items: center;
+        
+        @include breakpoint(max-width $small) {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    &__cell {
+        text-align: center;
+    }
+    
+    &__social-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        background-color: rgba(0,0,0,.5);
+        color: darken($pink, 10%);
+        margin: 0 auto .5em auto;
+        transition: all 400ms ease-out;
+        
+        &:hover {
+            background-color: #000;
+            color: darken($pink, 20%);
+        }
+        
+    }
+    
+    &__cell p:nth-of-type(2) {
+        text-transform: uppercase;
+        margin-bottom: .3em;
+        font-weight: 700;
+    }
+    
+    &__cell a {
+        color: inherit;
+        transition: color 300ms ease-out;
+        font-weight: 300;
+    }
+    
+    &__cell a:hover {
+        color: $pink;
+    }
+    
+    &__cell p:last-child {
+        font-weight: 300;
+    }
+    
+    &__social {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 2em;
+        
+        &-anchs {
+            width: 2.5em;
+            font-size: 1.2em;
+        }
+
+        &-anchs:first-of-type {
+            color: rgb(59, 89, 152);
+        }
+        
+        &-anchs:nth-of-type(2) {
+            color: rgb(29, 161, 242);
+        }
+        
+        &-anchs:nth-of-type(3) {
+            color: rgb(189, 8, 28);
+        }
+        
+        &-anchs:last-of-type {
+            color: rgb(255,0,0);
+        }
+        
+        &-anchs:not(:first-of-type) {
+           margin-left: 2.5em;     
+        }
+        
+
+    }
+ 
+}
+
+
+footer {
+    padding: 2.5em calc(50% - 600px);
+    background-color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: .9em;
+    color: #666;
+    text-align: center;
+}
+
+.footer__para {
+    margin-bottom: .2em;
+}
+
+
+
