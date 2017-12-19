@@ -45,7 +45,14 @@ input[type="submit"] {
     border: 1px solid #ccc; 
     font: inherit;
     color: inherit;  
+    
 }
+
+//.field-text input.input-color,
+//.field-text textarea.input-color,
+//.field-text select.input-color {
+//    color: #a7a6cb;
+//}
 
 .field-text input,
 .field-text select {
@@ -88,6 +95,11 @@ form label {
     justify-content: center;
     padding: .375em .375em .3125em .375em;
     color: #fff;
+    transition: color 300ms ease-out 100ms;
+}
+
+.field-prefix.input-color {
+    color: #a7a6cb;
 }
 
 form p {

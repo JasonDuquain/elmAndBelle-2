@@ -88,6 +88,15 @@ if (slideCount > 0) {
     // Add an event listener for next button
     document.getElementById('next').addEventListener('click', (e) => {
         e.preventDefault();
+        clearInterval(interval);
+        
+        /*only needed if the auto slide resets to 0..there is a window of time where the animated class is not there*/
+        for (i = 0; i < slideCount; i++) {
+            if (!slides[i].classList.contains('animated')) {
+                slides[i].classList.add('animated');
+            }   
+        }
+        
         if (cursor < slideCount -1) {
             moveSlides('forward');
             cursor++;
@@ -97,7 +106,7 @@ if (slideCount > 0) {
     // Add an event listener for previous button
     document.getElementById('prev').addEventListener('click', function(event) {
         event.preventDefault();
-
+        clearInterval(interval);
         if (cursor > 0) {
             moveSlides('backward');
             cursor--;
@@ -145,7 +154,37 @@ function moveSlides(direction) {
     }
 }
 
+function moveTheSlides() {
+    
+    if (cursor < slideCount) {
+        
+     for (let k = 0; k <slideCount; k++) {
+        
+        if (!slides[k].classList.contains('animated')) {
+            slides[k].classList.add('animated');
+        }
+        
+     }   
+        
+     moveSlides('forward');
+     cursor++; 
+ 
+     }
 
+    if (cursor === slideCount) {
+        
+        for (let j = 0; j <slideCount; j++) {
+            slides[j].classList.remove('animated');
+            slides[j].style.left = `${slideWidth * j}px`;
+        }
+        
+        cursor = 0;
+
+    }
+    
+}
+
+let interval = setInterval(moveTheSlides, 5000);
 
 /********FORM STYLES********/
 
@@ -153,11 +192,11 @@ let input = document.querySelectorAll('input, textarea, select');
           
          input.forEach((el) => {
                   el.addEventListener('focus', function() {
-                  el.previousElementSibling.style.color = '#a7a6cb';
+                  el.previousElementSibling.classList.add('input-color');
               });
              
                 el.addEventListener('blur', function() {
-                  el.previousElementSibling.style.color = '';
+                  el.previousElementSibling.classList.remove('input-color');
               });
           });
         
