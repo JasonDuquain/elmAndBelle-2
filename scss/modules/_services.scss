@@ -1,15 +1,19 @@
 
 
 .services {
-    background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.1)), url('../img/service-bg.jpg');
+    background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url('../img/service-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
+    position: relative; 
+    z-index: 1;
     
     &__grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 1.2em;
+        align-items: center;
+        margin-bottom: 6em !important;
         
         @include breakpoint(max-width $medium) {
             display: flex;
@@ -20,7 +24,7 @@
     
     &__salon-services {
         background-color: rgba(0,0,0,.9);
-        padding: 1.6em;
+        padding: 1.8em 1.5em;
         border-radius: 1em;
         display: flex;
         flex-direction: column;
@@ -39,14 +43,65 @@
     &__sub-heading {
         text-transform: uppercase;
         font-weight: 300;
-        margin-bottom: .3em;
+        margin-bottom: .6em;
     }
     
     &__summary {
         font-size: .9em;
         line-height: 1.6;
-        margin-bottom: 1.5em;
+        margin-bottom: 3.5em;
     }
+}
+
+
+
+.ribbon {
+    margin-top: 5em;
+ font-size: 1.3em !important;
+ /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+ width: 50%;
+    
+ position: relative;
+ background: #ba89b6;
+ color: #fff;
+ text-align: center;
+ padding: 1em 2em; /* Adjust to suit */
+ margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+.ribbon::before, .ribbon::after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid #986794;
+ z-index: -1;
+}
+.ribbon::before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+.ribbon::after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+.ribbon .ribbon-content::before, .ribbon .ribbon-content::after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: #804f7c transparent transparent transparent;
+ bottom: -1em;
+}
+.ribbon .ribbon-content::before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content::after {
+ right: 0;
+ border-width: 1em 1em 0 0;
 }
 
 

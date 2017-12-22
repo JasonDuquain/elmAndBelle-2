@@ -26,6 +26,7 @@
         left: 0;
         transform: translateY(-50%);
         text-align: center;
+
     }
 
     .container__slide.animated {
@@ -36,15 +37,53 @@ blockquote {
     color: #111;
     font-weight: 300;
     font-style: italic;
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
     line-height: 1.5;
+    position: relative;
+    padding-top: 2em;
 }
+
+blockquote::before {
+    content: "\201C";
+    line-height: 1.1;
+    font-size: 5em;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    color: #fff;
+}
+
+blockquote::after {
+    content: "\201D";
+    line-height: 1.1;
+    font-size: 5em;
+    position: absolute;
+    display: block;
+    right: .2em;
+    color: #fff;
+}
+
 
 cite {
     font-size: .75em;
     font-weight: 700;
     font-style: normal;
+    vertical-align: center;
 }
+
+.main-container img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .3em;
+    margin-bottom: .4em;
+    border: 1px solid white;
+    box-sizing: content-box;
+}
+
 
 /* Nav */
 #prev,
@@ -64,10 +103,14 @@ cite {
 
 #prev { 
     background-image: url('../img/arrow-left-out.svg');
+    
+    @include breakpoint(max-width $medium) {
+        transform: translateY(-50%) scale(.8);
+    }
 
     @include breakpoint(max-width $small) {
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(.7);
         top: -2.5em;
     }
 }
@@ -78,9 +121,13 @@ cite {
     background-image: url('../img/arrow-right-out.svg');
     right: 0;
     
+    @include breakpoint(max-width $medium) {
+        transform: translateY(-50%) scale(.8);
+    }
+    
     @include breakpoint (max-width $small) {
         left: 50%;
-        transform: translate(-50%, 0);
+        transform: translate(-50%, 0) scale(.7);
         bottom: -5.5em;
         top: auto;
     }
