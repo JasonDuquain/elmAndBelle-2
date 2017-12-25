@@ -14,6 +14,8 @@
         grid-gap: 1.2em;
         align-items: center;
         margin-bottom: 6em !important;
+        perspective: 800px;
+        
         
         @include breakpoint(max-width $medium) {
             display: flex;
@@ -28,11 +30,25 @@
         border-radius: 1em;
         display: flex;
         flex-direction: column;
+        opacity: 0;
+        
+        &:nth-of-type(2) {
+            animation-delay: .2s;
+        }
+        
+        &:nth-of-type(3) {
+            animation-delay: .4s;
+        }
         
         @include breakpoint(max-width $medium) {
             flex: 1 1 300px;
             margin: 1em;
         }
+    }
+    
+    &__salon-services.js--flyIn {
+       animation: fly-in 600ms ease-in both;
+        opacity: 1;
     }
     
     & .fa {
@@ -104,4 +120,19 @@
  border-width: 1em 1em 0 0;
 }
 
+@keyframes fly-in {
+    0% {
+       transform: translateZ(-800px) rotateY(90deg); 
+        opacity: 0; 
+    }
+    
+    50% {
+        transform: translateZ(-160px) rotateY(87deg); 
+        opacity: 1;    
+    }
+    
+    100% {
+        transform: translateZ(0) rotateY(0);    
+    }
+}
 

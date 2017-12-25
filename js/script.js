@@ -200,3 +200,26 @@ let input = document.querySelectorAll('input, textarea, select');
               });
           });
         
+/*********** FLY IN ON SCROLL TO SECT  **********/
+
+let svcsItems = document.querySelectorAll('.services__salon-services');
+
+window.addEventListener('scroll', function() {
+    svcsItems.forEach((el) => {
+
+        if (el.getBoundingClientRect().top <= 400) {
+           el.classList.add('js--flyIn')  
+        } else {
+            el.classList.remove('js--flyIn');
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
